@@ -352,10 +352,10 @@ button:active, .btn:active, a:active {
     color: #5c2412 !important;
 }
 
-/* Цены — чёткий глубокий чёрный */
+/* Цены — фирменный шоколадный цвет и увеличенная жирность */
 .price-row span:last-child {
-    color: #1a1a1a !important;
-    font-weight: 700 !important;
+    color: #5c2412 !important;
+    font-weight: 800 !important;
 }
 
 /* Плашка «ХИТ» */
