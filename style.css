@@ -208,29 +208,31 @@ button:not(.nav-btn-guide):not(.lead-magnet-btn):not(.btn-accent):not(.filter-bt
     box-shadow: 0 4px 15px rgba(200, 107, 131, 0.3) !important;
 }
 
-/* Кнопки фильтров */
+/* Кнопки фильтров — согласованный шоколадный цвет (#5c2412) */
 .filter-btn {
-    border: 1px solid var(--border-color) !important;
-    background-color: var(--bg-main) !important;
-    color: var(--text-main) !important;
+    border: 1px solid var(--chocolate) !important;
+    background-color: transparent !important;
+    color: var(--chocolate) !important;
     font-family: 'Lora', serif !important;
     font-weight: 600 !important;
     font-size: 0.8rem !important;
     letter-spacing: 0.08em !important;
-    text-transform: uppercase !important; /* Все буквы заглавные */
+    text-transform: uppercase !important;
     transition: all 0.3s ease !important;
     border-radius: 50px !important;
     padding: 10px 22px !important;
 }
+
 .filter-btn:hover {
-    border-color: var(--accent-pink) !important;
-    color: var(--accent-pink) !important;
+    border-color: var(--chocolate) !important;
+    color: var(--chocolate) !important;
     transform: scale(1.02) !important;
 }
+
 .filter-btn.active {
-    background-color: var(--accent-pink) !important;
-    color: var(--white) !important;
-    border-color: var(--accent-pink) !important;
+    background-color: var(--chocolate) !important; /* Шоколадный активный фон */
+    color: #ffffff !important;
+    border-color: var(--chocolate) !important;
 }
 
 /* Текстовая ссылка Behance */
