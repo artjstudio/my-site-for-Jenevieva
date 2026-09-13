@@ -1131,7 +1131,6 @@ img,
     color: #6c2603;
 }
 /* Дополнительно для переключателя языков и подвала */
-
 .legal-footer {
     text-align: center;
     padding: 35px 20px;
@@ -1141,10 +1140,18 @@ img,
     margin-top: 60px;
 }
 
+/* Блок ссылок (отделяет ссылки от копирайта снизу) */
+.legal-footer .footer-links {
+    margin-bottom: 16px;
+}
+
+/* Сами ссылки (добавлен margin и display) */
 .legal-footer a {
     color: #ffffff;
     text-decoration: none;
     opacity: 0.85;
+    display: inline-block; /* Чтобы внешние отступы корректно работали */
+    margin: 0 12px;       /* Отступ 12px слева и справа у каждой ссылки */
 }
 
 .legal-footer a:hover, .legal-footer a.active-link {
