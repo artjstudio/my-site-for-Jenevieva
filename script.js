@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             guide_banner_badge: { ru: 'АРТ-ПРАКТИКУМ + СКИДКА 20%', en: 'ART PRACTICUM + 20% OFF', ua: 'АРТ-ПРАКТИКУМ + ЗНИЖКА 20%' },
             guide_banner_title: { ru: 'Тихое искусство быть собой', en: 'The Quiet Art of Being Yourself', ua: 'Тихе мистецтво бути собою' },
             guide_banner_subtitle: { ru: 'Пошаговый путь к себе через медитативное рисование', en: 'A step-by-step path to yourself through meditative drawing', ua: 'Покроковий шлях до себе через медитативне малювання' },
-            guide_banner_desc: { ru: 'Авторский гайд с практиками и упражнениями, которые помогают замедлиться, успокоить ум и почувствовать внутреннюю опору. Он создан для тех, кто устал от спешки и хочет мягко вернуться к себе — через внимание, наблюдение и простые творческие практики.', en: "Author's guide with practices and exercises that help you slow down, calm your mind and feel inner support. It is created for those who are tired of haste and want to gently return to themselves — through attention, observation and simple creative practices.", ua: "Авторський гайд з практиками та вправами, які допомагають сповільнитися, заспокоїти розум і відчути внутрішню опору. Він створений для тих, хто втомився від поспіху і хоче м'яко повернутися до себе — через увагу, спостереження і прості творчі практики." },
+            guide_banner_desc: { ru: 'Авторский гайд с практиками и упражнениями, которые помогают замедлиться, успокоить ум и почувствовать внутреннюю опору. Он создан для тех, кто устал от спешки и хочет мягко вернуться к себе — через внимание, наблюдение и простые творческие практики.', en: "Author's guide with practices and exercises that help you slow down, calm your mind and feel inner support. It is created for those who are tired of haste and want to gently return to themselves — through attention, observation and simple creative practices.", ua: "Авторський гайд з практиками та вправами, які допомагають сповільнитися, заспокоїти розум і відчути внутрішню опору. Він створений для тих, кто втомился від поспіху і хочет м'яко повернутися до себе — через увагу, спостереження і прості творчі практики." },
             guide_banner_btn: { ru: 'Забрать гайд и скидку 20%', en: 'Get the Guide and 20% Discount', ua: 'Отримати гайд і знижку 20%' },
             nav_guide: { ru: 'Бесплатный гайд', en: 'Free Guide', ua: 'Безкоштовний гайд' }
         },
@@ -287,8 +287,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!phoneInput || typeof intlTelInput === 'undefined') return;
         phoneInputInstance?.destroy();
         phoneInputInstance = intlTelInput(phoneInput, {
-            initialCountry: 'ua', // <-- Установлена Украина по умолчанию
-            preferredCountries: ['ua', 'de', 'pl', 'us'], // <-- Украина первая в выпадающем списке
+            initialCountry: 'ua',
+            preferredCountries: ['ua', 'de', 'pl', 'us'],
             separateDialCode: true,
             autoPlaceholder: 'polite',
             utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js'
@@ -384,7 +384,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // ПОДГРУЗКА И ОТОБРАЖЕНИЕ ПОРТФОЛИО ИЗ projects.json
     // ==========================================
     async function loadPortfolio() {
-        // Находим контейнер для карточек (по id или классу)
         const portfolioContainer = document.getElementById('portfolio-grid') || document.querySelector('.portfolio-grid');
         if (!portfolioContainer) return;
 
@@ -395,13 +394,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const projects = await response.json();
-            portfolioContainer.innerHTML = ''; // Очищаем старые тестовые карточки
+            portfolioContainer.innerHTML = '';
 
             projects.forEach(project => {
                 const item = document.createElement('div');
                 item.className = 'portfolio-item all';
                 
-                // Формируем верстку карточки
                 item.innerHTML = `
                     <div class="portfolio-card" onclick="openImageViewerModal('${project.cover}')" style="cursor: pointer;">
                         <img src="${project.cover}" alt="${project.title}" loading="lazy" class="portfolio-img">
@@ -423,4 +421,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Вызываем подгрузку при открытии страницы
     loadPortfolio();
-});
+
+    // ==========================================
+    // ЛОГИКА КНОПКИ «НАВЕРХ»
+    // ==========================================
+    const backToTopBtn = document.getElementById('backToTop');
+
+    if (backToTopBtn) {
+        // Показываем кнопку при прокрутке вниз на 300px
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+            } else {
+                backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        // Плавный скролл наверх при клике
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+}); // Закрывающий тег для DOMContentLoaded
