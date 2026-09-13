@@ -1130,51 +1130,72 @@ img,
     user-select: none;
     color: #6c2603;
 }
-/* Дополнительно для переключателя языков и подвала */
-.legal-footer {
-    text-align: center;
-    padding: 35px 20px;
+/* ==========================================================================
+   ЕДИНЫЙ ПОДВАЛ ДЛЯ ВСЕХ СТРАНИЦ (FOOTER)
+   ========================================================================== */
+footer {
     background-color: #6c2603;
-    color: #ffffff;
-    font-size: 0.9rem;
+    color: #fdfbf7;
+    padding: 48px 24px 36px;
+    text-align: center;
     margin-top: 60px;
 }
 
-/* Блок ссылок (отделяет ссылки от копирайта снизу) */
-.legal-footer .footer-links {
-    margin-bottom: 16px;
+/* Блок со ссылками */
+footer .footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
 }
 
-/* Сами ссылки (добавлен margin и display) */
-.legal-footer a {
-    color: #ffffff;
-    text-decoration: none;
-    opacity: 0.85;
-    display: inline-block; /* Чтобы внешние отступы корректно работали */
-    margin: 0 12px;       /* Отступ 12px слева и справа у каждой ссылки */
-}
-
-.legal-footer a:hover, .legal-footer a.active-link {
-    text-decoration: underline;
-    color: #ffffff;
-    opacity: 1;
-}
-
-/* ПОДВАЛ САЙТА (FOOTER) */
-footer,
-footer p,
-footer span,
-footer a {
-    color: #ffffff;
-}
-
-footer a {
+footer .footer-links a {
+    color: #fdfbf7 !important;
     text-decoration: none;
     opacity: 0.85;
     transition: opacity 0.2s ease;
 }
 
-footer a:hover {
+footer .footer-links a:hover {
     opacity: 1;
-    text-decoration: underline;
+    text-decoration: underline !important;
+}
+
+/* Точки-разделители */
+footer .dot-divider {
+    color: #fdfbf7;
+    opacity: 0.4;
+    font-size: 0.8rem;
+}
+
+/* Блок копирайта и подписи */
+footer .footer-copy {
+    border-top: 1px solid rgba(253, 251, 247, 0.15);
+    padding-top: 20px;
+    max-width: 360px;
+    margin: 0 auto;
+    opacity: 0.75;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    line-height: 1.8;
+}
+
+footer .footer-copy p {
+    margin: 0 !important;
+    color: #fdfbf7 !important;
+}
+
+footer .footer-copy a {
+    color: #fdfbf7 !important;
+    text-decoration: underline !important;
+    transition: opacity 0.2s ease;
+}
+
+footer .footer-copy a:hover {
+    opacity: 0.7;
 }
