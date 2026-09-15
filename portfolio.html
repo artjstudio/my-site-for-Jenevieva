@@ -491,6 +491,86 @@
                 </div>
             </div>
 
+<!-- 12.-- ИЛЛЮСТРАЦИЯ: Экотайм -->
+<div class="portfolio-item illustrations bg-white/80 border border-[#6c2603]/10 p-5 md:p-6 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
+    
+    <!-- Главное изображение с оверлеем и плюсиком -->
+    <div class="mb-5 overflow-hidden border border-[#6c2603]/5 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+        <img src="assets/images/portfolio/ecotime-main.webp" 
+             alt="Ecotime Illustration" 
+             class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" 
+             onerror="this.src='https://placehold.co/800x600/fdfbf7/6c2603?text=Ecotime+Main';">
+        <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+            <span class="text-white text-3xl font-light">⊕</span>
+        </div>
+    </div>
+
+    <!-- Текстовый блок с описанием на 3 языках -->
+    <div class="mb-6 flex-grow">
+        <!-- Категория -->
+        <span class="text-[9px] uppercase tracking-widest text-[#6c2603]/60 font-bold block mb-2">
+            <span data-lang="ru">Журнальная иллюстрация</span>
+            <span data-lang="en">Editorial Illustration</span>
+            <span data-lang="ua">Журнальна ілюстрація</span>
+        </span>
+
+        <!-- Название -->
+        <h3 class="text-lg md:text-xl font-bold uppercase tracking-wide text-[#6c2603] mb-3">
+            <span data-lang="ru">Экотайм • Гармония и природа</span>
+            <span data-lang="en">Ecotime • Harmony & Nature</span>
+            <span data-lang="ua">Екотайм • Гармонія та природа</span>
+        </h3>
+
+        <!-- Описание -->
+        <p class="text-xs md:text-sm text-[#6c2603]/80 leading-relaxed font-medium">
+            <span data-lang="ru">В этой серии иллюстраций для журнала «Экотайм» мне хотелось передать ощущение естественной гармонии, свежести и осознанности. Работа над лаконичными формами и органическими текстурами требовала тонкой графической проработки, чтобы сохранить лёгкость образа и подчеркнуть эстетику жизни в согласии с природой.</span>
+            <span data-lang="en">In this illustration series for EcoTime magazine, I wanted to convey a sense of natural harmony, freshness, and mindfulness. Working with minimalist shapes and organic textures required fine graphic detail to preserve lightness and highlight the aesthetics of living in tune with nature.</span>
+            <span data-lang="ua">У цій серії ілюстрацій для журналу «Екотайм» мені хотілося передати відчуття природної гармонії, свіжості та усвідомленості. Робота над лаконічними формами та органічними текстурами вимагала тонкого графічного опрацювання, щоб зберегти легкість образу та підкреслити естетику життя в згоді з природою.</span>
+        </p>
+    </div>
+
+    <!-- Дополнительные 2 карточки снизу (Эскиз и Детали) -->
+    <div class="grid grid-cols-2 gap-4 mb-5">
+        <!-- Левая доп. картинка -->
+        <div class="space-y-1.5">
+            <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center">
+                <span data-lang="ru">Эскиз и концепт</span>
+                <span data-lang="en">Sketch & Concept</span>
+                <span data-lang="ua">Ескіз та концепт</span>
+            </span>
+            <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                <img src="assets/images/portfolio/ecotime-sketch.webp" 
+                     alt="Sketch" 
+                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                     onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Sketch';">
+                <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                    <span class="text-white text-xl">⊕</span>
+                </div>
+            </div>
+        </div>
+		</div>
+
+        <!-- Правая доп. картинка -->
+        <div class="space-y-1.5">
+            <span class="text-[9px] uppercase tracking-wider text-[#6c2603]/50 font-bold block text-center">
+                <span data-lang="ru">Детали и текстура</span>
+                <span data-lang="en">Details & Texture</span>
+                <span data-lang="ua">Деталі та текстура</span>
+            </span>
+            <div class="aspect-square overflow-hidden border border-[#6c2603]/10 cursor-pointer relative group" onclick="openImageViewerModal(this.querySelector('img').src)">
+                <img src="assets/images/portfolio/ecotime-detail.webp" 
+                     alt="Details" 
+                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                     onerror="this.src='https://placehold.co/200x200/fdfbf7/6c2603?text=Details';">
+                <div class="absolute inset-0 bg-[#6c2603]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                    <span class="text-white text-xl">⊕</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+			
         </div>
     </main>
 
