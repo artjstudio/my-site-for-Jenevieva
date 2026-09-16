@@ -148,14 +148,20 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = 'auto';
     };
 
-    // Фильтрация портфолио
-    window.filterSelection = function(category, element) {
-        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-        element?.classList.add('active');
-        document.querySelectorAll('.portfolio-item').forEach(item => {
-            item.style.display = (category === 'all' || item.classList.contains(category)) ? 'flex' : 'none';
-        });
-    };
+   // Фильтрация портфолио
+window.filterSelection = function(category, element) {
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    element?.classList.add('active');
+
+    // Разбиваем 'guides illustrations' на массив ['guides', 'illustrations']
+    const categories = category.split(' ');
+
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+        // Проверяем, совпадает ли хотя бы один класс из массива с классами карточки
+        const isMatch = category === 'all' || categories.some(cat => item.classList.contains(cat));
+        item.style.display = isMatch ? 'flex' : 'none';
+    });
+};
 
     // Обработчик кликов вне модальных окон
     window.onclick = function(event) {
